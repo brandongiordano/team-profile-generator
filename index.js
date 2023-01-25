@@ -54,12 +54,70 @@ const addEmployee = () => {
                 promptIntern();
                 break;
             default:
-                buildTeam();
+                buildTeam();//this doesnt exist yet
 
         }
     })
 }
 
-const promptEngineer = () => {}
+const promptEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the Engineer's name?"
+        },
+        {
+            type: "input",
+            name: "employeeId",
+            message: "What is the Engineer's Employee ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the Engineer's email address?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the Engineer's GitHub?"
+        }
+    ])
+    .then(answers => {
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github);
+        teamMembers.push(engineer);
+        addEmployee();
+    })
+}
 
-const promptIntern = () => {}
+const promptIntern = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the Intern's name?"
+        },
+        {
+            type: "input",
+            name: "employeeId",
+            message: "What is the Intern's Employee ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the Intern's email address?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What school are they attending?"
+        }
+    ])
+    .then(answers => {
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.github);
+        teamMembers.push(intern);
+        addEmployee();
+    })
+}
+
+promptManager();
