@@ -32,5 +32,34 @@ const promptManager = () => {
             answers.name, answers.employeeId, answers.email, answers.officeNumber,
         )
         teamMembers.push(manager);
+        addEmployee();
     })
 }
+
+const addEmployee = () => {
+    return inquirer.prompt([
+        {
+            type: "list",
+            name: "roleChoice",
+            message: "Please choose an option",
+            choices: ["Add Engineer", "Add Intern", "Team Complete"]
+        }
+    ])
+    .then(userChoice => {
+        switch (userChoice.roleChoice) {
+            case "Add Engineer":
+                promptEngineer();
+                break;
+            case "Add Intern":
+                promptIntern();
+                break;
+            default:
+                buildTeam();
+
+        }
+    })
+}
+
+const promptEngineer = () => {}
+
+const promptIntern = () => {}
