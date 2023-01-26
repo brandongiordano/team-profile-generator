@@ -38,7 +38,7 @@ This application is not covered under any license
 
 ## Contributing
 
-Contribute to this project can't
+Contribute to this project bt trying it out and providing feedback
 
 ## Testing
 
