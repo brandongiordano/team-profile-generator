@@ -1,9 +1,10 @@
 const inquirer = require("inquirer");
-constfs = require("fs");
+const fs = require("fs");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const generatePage = require("./lib/generatePage.js");
+const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "public");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
 const teamMembers = [];
@@ -124,7 +125,7 @@ const promptIntern = () => {
 }
 
 const buildTeam = () => {
-    if (!fs.existsStnc(OUTPUT_DIR)) {
+    if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
     fs.writeFileSync(outputPath, generatePage(teamMembers), "utf-8");
