@@ -118,7 +118,7 @@ const promptIntern = () => {
         }
     ])
     .then(answers => {
-        const intern = new Intern(answers.name, answers.id, answers.email, answers.github);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         teamMembers.push(intern);
         addEmployee();
     })
