@@ -18,7 +18,7 @@ const promptManager = () => {
         },
         {
             type: "input",
-            name: "employeeId",
+            name: "id",
             message: "Please enter your employee ID",
         },
         {
@@ -33,7 +33,7 @@ const promptManager = () => {
         }
     ]).then(answers => {
         const manager = new Manager(
-            answers.name, answers.employeeId, answers.email, answers.officeNumber,
+            answers.name, answers.id, answers.email, answers.officeNumber,
         )
         teamMembers.push(manager);
         addEmployee();
@@ -73,7 +73,7 @@ const promptEngineer = () => {
         },
         {
             type: "input",
-            name: "employeeId",
+            name: "id",
             message: "What is the Engineer's Employee ID?"
         },
         {
@@ -88,7 +88,7 @@ const promptEngineer = () => {
         }
     ])
     .then(answers => {
-        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         teamMembers.push(engineer);
         addEmployee();
     })
@@ -103,7 +103,7 @@ const promptIntern = () => {
         },
         {
             type: "input",
-            name: "employeeId",
+            name: "id",
             message: "What is the Intern's Employee ID?"
         },
         {
@@ -118,7 +118,7 @@ const promptIntern = () => {
         }
     ])
     .then(answers => {
-        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.github);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.github);
         teamMembers.push(intern);
         addEmployee();
     })

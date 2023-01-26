@@ -9,3 +9,7 @@ main {
     margin: 20px;
     padding: 20px;
 }
+
+header h1 {
+    padding-left: 50px;
+}
